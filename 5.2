@@ -1,0 +1,36 @@
+def main():
+    input_file = open("input.txt", "r")
+    output_file = open("output.txt", "w")
+    line = input_file.readline().split()
+    n = int(line[0])
+    line = input_file.readline().split()
+    a = []
+    summ = 0
+    for i in range(n):
+        a.append(int(line[i]))
+        if int(line[i]) > 0:
+            summ += int(line[i])
+    b = sorted(a)
+    minn = b[0]
+    b.reverse()
+    maxx = b[0]
+    print(minn, maxx)
+    print(summ)
+    pr = 1
+    k = a.index(minn)
+    l = a.index(maxx)
+    print(k, l)
+    if k < l:
+        for i in range(k + 1, l):
+            pr *= a[i]
+    else:
+        for i in range(l + 1, k):
+            pr *= a[i]
+    print(pr)
+    output_file.write(str(summ) + " " + str(pr) + '\n')
+    input_file.close()
+    output_file.close()
+
+
+if __name__ == "__main__":
+    main()
