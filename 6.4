@@ -1,0 +1,23 @@
+numbers = [3, -5, 2, -8, 7, -1, 4, -6]
+first_positive = None
+last_negative = None
+
+for num in numbers:
+    if num > 0 and first_positive is None:
+        first_positive = num
+    if num < 0:
+        last_negative = num
+
+print("Первый положительный:", first_positive)
+print("Последний отрицательный:", last_negative)
+
+# Задание 5
+C = 'a'
+A = ["apple", "banana", "ana", "aa", "a", "level", "car", "aha"]
+
+count = 0
+for item in A:
+    if len(item) > 1 and item.startswith(C) and item.endswith(C):
+        count += 1
+
+print("Количество подходящих элементов:", count)
