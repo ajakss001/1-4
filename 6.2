@@ -1,0 +1,19 @@
+class User:
+    def __init__(self, login, password):
+        self.login = login
+        self.password = password
+
+users = [
+    User("user1", "pass123"),
+    User("user2", "qwerty"),
+    User("admin", "admin"),
+    User("test", "test123"),
+    User("guest", "guest")
+]
+
+search_login = "admin"
+search_password = "admin"
+
+for user in users:
+    if user.login == search_login and user.password == search_password:
+        print(f"Найден пользователь: {user.login}, {user.password}")
