@@ -1,0 +1,20 @@
+class Task:
+    def __init__(self, date_start, date_finish, description):
+        self.date_start = date_start
+        self.date_finish = date_finish
+        self.description = description
+
+tasks = [
+    Task("2023-01-01", "2023-01-10", "Занятие 1"),
+    Task("2023-02-01", "2023-02-15", "Занятие 2"),
+    Task("2023-03-01", "2023-03-20", "Занятие 3"),
+    Task("2023-04-01", "2023-04-25", "Занятие 4"),
+    Task("2023-05-01", "2023-05-25", "Занятие 5")
+]
+
+latest_task = tasks[0]
+for task in tasks:
+    if task.date_finish > latest_task.date_finish:
+        latest_task = task
+
+print(f"Самое позднее занятие: {latest_task.description}, завершается {latest_task.date_finish}")
