@@ -1,0 +1,24 @@
+class FitnessCenter:
+    def __init__(self, client_code, year, month, duration):
+        self.client_code = client_code
+        self.year = year
+        self.month = month
+        self.duration = duration
+
+fitness_centers = [
+    FitnessCenter("A1", 2023, 5, 60),
+    FitnessCenter("A2", 2023, 6, 45),
+    FitnessCenter("A3", 2023, 7, 90),
+    FitnessCenter("A4", 2023, 8, 30),
+    FitnessCenter("A5", 2023, 9, 120)
+]
+
+max_session = min_session = fitness_centers[0]
+for center in fitness_centers:
+    if center.duration > max_session.duration:
+        max_session = center
+    if center.duration < min_session.duration:
+        min_session = center
+
+print("Самое продолжительное занятие:", max_session.client_code, max_session.year, max_session.month, max_session.duration)
+print("Самое короткое занятие:", min_session.client_code, min_session.year, min_session.month, min_session.duration)
