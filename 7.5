@@ -1,0 +1,33 @@
+class FitnessCenter2:
+    def __init__(self, client_code, year, month, duration):
+        self.client_code = client_code
+        self.year = year
+        self.month = month
+        self.duration = duration
+
+fitness_centers2 = [
+    FitnessCenter2("B1", 2022, 1, 60),
+    FitnessCenter2("B2", 2022, 2, 45),
+    FitnessCenter2("B3", 2023, 3, 90),
+    FitnessCenter2("B4", 2023, 4, 30),
+    FitnessCenter2("B5", 2023, 5, 120),
+    FitnessCenter2("B6", 2023, 6, 45),
+    FitnessCenter2("B7", 2024, 7, 60),
+    FitnessCenter2("B8", 2024, 8, 90),
+    FitnessCenter2("B9", 2024, 9, 60),
+    FitnessCenter2("B10", 2024, 10, 90)
+]
+
+year_durations = {}
+for center in fitness_centers2:
+    if center.year in year_durations:
+        year_durations[center.year] += center.duration
+    else:
+        year_durations[center.year] = center.duration
+
+max_duration = max(year_durations.values())
+result_years = [year for year, duration in year_durations.items() if duration == max_duration]
+min_year = min(result_years)
+
+print("Год с наибольшей продолжительностью:", min_year)
+print("Наибольшая продолжительность:", max_duration)
